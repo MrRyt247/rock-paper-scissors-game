@@ -1,0 +1,30 @@
+<div class="container">
+    Score
+    Rules
+
+  <div class="choices" *ngIf="!human.hasPlayed">
+    <button *ngFor="let choice of choices; let i=index" (click)="play(i)">
+      <div class="img">
+        <img [src]="choice.image" [alt]="choice.name">
+      </div>
+    </button>
+  </div>
+
+  <div class="result" *ngIf="human.hasPlayed">
+    <div class="item">
+      <p>You Picked</p>
+      <img [src]="choices[human.getIndex].image" [alt]="choices[human.getIndex].name">
+      <p>You chose: <strong>{{ choices[human.getIndex].name }}</strong></p>
+    </div>
+
+    <div class="item result-section">
+      <p class="result-text">{{ result }}</p>
+      <button type="button" (click)="reset()">Play Again</button>
+    </div>
+
+    <div *ngIf="computer.hasPlayed" class="item">
+      <p>The House Picked</p>
+      <img [src]="choices[computer.getIndex].image" [alt]="choices[computer.getIndex].name">
+    </div>
+  </div>
+</div>
