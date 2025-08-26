@@ -23,15 +23,15 @@ export class GameComponent {
   }
 
   determineWinner(player: string, computer: string): string {
-    if (player === computer) return "It's a draw!";
+    if (player === computer) return "Draw";
     if (
       (player === 'rock' && computer === 'scissors') ||
       (player === 'scissors' && computer === 'paper') ||
       (player === 'paper' && computer === 'rock')
     ) {
-      return 'You Win!';
+      return 'You Win';
     } else {
-      return 'You Lose!';
+      return 'You Lose';
     }
   }
 

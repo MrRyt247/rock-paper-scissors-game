@@ -1,17 +1,17 @@
 :root {
-  --ScissorsGradientStart: hsl(39, 89%, 49%);
-  --ScissorsGradientEnd: hsl(40, 84%, 53%);
-  --PaperGradientStart: hsl(230, 89%, 62%);
-  --PaperGradientEnd: hsl(230, 89%, 65%);
-  --RockGradientStart: hsl(349, 71%, 52%);
-  --RockGradientEnd: hsl(349, 70%, 56%);
-  --LizardGradientStart: hsl(261, 73%, 60%);
-  --LizardGradientEnd: hsl(261, 72%, 63%);
-  --SpockGradientStart: hsl(189, 59%, 53%);
-  --SpockGradientEndt: hsl(189, 58%, 57%);
-  --DarkText: hsl(229, 25%, 31%);
-  --ScoreText: hsl(229, 64%, 46%);
-  --HeaderOutline: hsl(217, 16%, 45%);
+  --scissorsGradientStart: hsl(39, 89%, 49%);
+  --scissorsGradientEnd: hsl(40, 84%, 53%);
+  --paperGradientStart: hsl(230, 89%, 62%);
+  --paperGradientEnd: hsl(230, 89%, 65%);
+  --rockGradientStart: hsl(349, 71%, 52%);
+  --rockGradientEnd: hsl(349, 70%, 56%);
+  --lizardGradientStart: hsl(261, 73%, 60%);
+  --lizardGradientEnd: hsl(261, 72%, 63%);
+  --spockGradientStart: hsl(189, 59%, 53%);
+  --spockGradientEndt: hsl(189, 58%, 57%);
+  --darkText: hsl(229, 25%, 31%);
+  --scoreText: hsl(229, 64%, 46%);
+  --headerOutline: hsl(217, 16%, 45%);
   --bgGradientStart: hsl(214, 47%, 23%);
   --bgGradientEnd: hsl(237, 49%, 15%);
 }
@@ -20,17 +20,35 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Barlow Semi Condensed", sans-serif;
+  text-transform: uppercase;
 }
 
-input, button {
+body {
+  height: 100dvh;
+  background: radial-gradient(
+    circle at top,
+    var(--bgGradientStart),
+    var(--bgGradientEnd)
+  );
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+input,
+button {
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
+img {
+  display: block;
+  flex-shrink: 0;
+}
+
 .attribution {
-  font-family: monospace, "Courier New";
   font-size: 11px;
-  font-weight: 700;
-  color: black;
+  font-weight: 400;
+  color: #ccc;
   margin-inline: auto;
   -webkit-user-select: none;
   user-select: none;

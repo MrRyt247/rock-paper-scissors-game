@@ -1,30 +1,46 @@
 <div class="container">
-    Score
-    Rules
-
-  <div class="choices" *ngIf="!human.hasPlayed">
-    <button *ngFor="let choice of choices; let i=index" (click)="play(i)">
-      <div class="img">
-        <img [src]="choice.image" [alt]="choice.name">
-      </div>
-    </button>
+  <div class="choices" *ngIf="!human.hasPlayed" [style.display]="!human.hasPlayed ? 'flex' : 'none'">
+    <img src="../../assets/bg-triangle.svg" alt="triangle">
+    <div class="buttons">
+      <button class="button" *ngFor="let choice of choices; let i=index" (click)="play(i)"
+        [style.background-image]="'linear-gradient(var(--' + choice.name + 'GradientStart), var(--' + choice.name + 'GradientEnd))'">
+        <div class="img">
+          <img [src]="choice.image" [alt]="choice.name">
+        </div>
+      </button>
+    </div>
   </div>
 
-  <div class="result" *ngIf="human.hasPlayed">
-    <div class="item">
+  <div class="result" *ngIf="human.hasPlayed" [style.display]="human.hasPlayed ? 'grid' : 'none'">
+    <div class="item human">
       <p>You Picked</p>
-      <img [src]="choices[human.getIndex].image" [alt]="choices[human.getIndex].name">
-      <p>You chose: <strong>{{ choices[human.getIndex].name }}</strong></p>
+      <button class="button" [class.winner]="result === 'You Win'"
+        [style.background-image]="'linear-gradient(var(--' + choices[human.getIndex].name + 'GradientStart), var(--' + choices[human.getIndex].name + 'GradientEnd))'">
+        <div class="img">
+          <img [src]="choices[human.getIndex].image" [alt]="choices[human.getIndex].name">
+        </div>
+      </button>
     </div>
 
-    <div class="item result-section">
-      <p class="result-text">{{ result }}</p>
-      <button type="button" (click)="reset()">Play Again</button>
+    <div class="item result-section" *ngIf="result">
+      <h1 class="result-text">{{ result }}</h1>
+      <button class="button" type="button" (click)="reset()">Play Again</button>
     </div>
 
-    <div *ngIf="computer.hasPlayed" class="item">
+    <div class="item computer">
       <p>The House Picked</p>
-      <img [src]="choices[computer.getIndex].image" [alt]="choices[computer.getIndex].name">
-    </div>
+      <button class="button" *ngIf="computer.hasPlayed; else pending"
+        [style.background-image]="'linear-gradient(var(--' + choices[computer.getIndex].name + 'GradientStart), var(--' + choices[computer.getIndex].name + 'GradientEnd))'"
+        [class.winner]="result === 'You Lose'">
+        <div class="img">
+          <img [src]="choices[computer.getIndex].image" [alt]="choices[computer.getIndex].name">
+        </div>
+      </button>
+
+      <ng-template #pending>
+        <div class="pending-template">
+          <div class="pending"></div>
+        </div>
+      </ng-template>
   </div>
 </div>
