@@ -1,21 +1,36 @@
 :root {
-  --tomato: hsla(4, 100%, 67%, 0.708);
-  --darkSlateGrey: hsl(234, 29%, 20%);
-  --charcoalGrey: hsl(235, 18%, 26%);
-  --gray: hsl(231, 7%, 60%);
-  --white: hsl(0, 0%, 100%);
+  --ScissorsGradientStart: hsl(39, 89%, 49%);
+  --ScissorsGradientEnd: hsl(40, 84%, 53%);
+  --PaperGradientStart: hsl(230, 89%, 62%);
+  --PaperGradientEnd: hsl(230, 89%, 65%);
+  --RockGradientStart: hsl(349, 71%, 52%);
+  --RockGradientEnd: hsl(349, 70%, 56%);
+  --LizardGradientStart: hsl(261, 73%, 60%);
+  --LizardGradientEnd: hsl(261, 72%, 63%);
+  --SpockGradientStart: hsl(189, 59%, 53%);
+  --SpockGradientEndt: hsl(189, 58%, 57%);
+  --DarkText: hsl(229, 25%, 31%);
+  --ScoreText: hsl(229, 64%, 46%);
+  --HeaderOutline: hsl(217, 16%, 45%);
+  --bgGradientStart: hsl(214, 47%, 23%);
+  --bgGradientEnd: hsl(237, 49%, 15%);
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+input, button {
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 .attribution {
   font-family: monospace, "Courier New";
   font-size: 11px;
   font-weight: 700;
-  color: white;
+  color: black;
   margin-inline: auto;
   -webkit-user-select: none;
   user-select: none;
