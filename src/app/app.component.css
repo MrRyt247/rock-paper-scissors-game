@@ -1,9 +1,18 @@
 :host {
+  /* max-height: 700px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   flex-grow: 1;
+  /* gap: clamp(2rem, 69vh, 8rem); */
+  /* padding-block: 3rem; */
+  padding-top: 2rem;
   position: relative;
+  box-sizing: content-box;
+}
+
+app-scorebroad {
+  display: flex;
+  justify-content: center;
 }
 
 app-game {
@@ -11,4 +20,14 @@ app-game {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: clamp(3rem, 7vh, 4rem);
+  background-color: aqua;
+}
+
+
+@media screen and (max-width: 768px) {
+  :host {
+    padding-block: 2rem;
+    gap: clamp(3rem, 6vh, 4rem);
+  }
 }
