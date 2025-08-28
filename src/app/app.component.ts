@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { GameComponent } from './game/game.component';
 import { RulesComponent } from './rules/rules.component';
-import { ScorebroadComponent } from './scorebroad/scorebroad.component';
+import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 
 @Component({
   selector: 'app-root',
-  imports: [GameComponent, RulesComponent, ScorebroadComponent],
+  imports: [GameComponent, RulesComponent, ScoreboardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'rock-paper-scissors-game';
