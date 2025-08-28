@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ScoreService } from '../services/score.service';
 
 @Component({
   selector: 'app-game',
@@ -15,6 +16,8 @@ export class GameComponent {
     { name: 'scissors', image: '/assets/icon-scissors.svg' },
   ];
 
+  scoreService = inject(ScoreService);
+
   human = new Player();
   computer = new Player();
 
@@ -23,12 +26,13 @@ export class GameComponent {
   }
 
   determineWinner(player: string, computer: string): string {
-    if (player === computer) return "Draw";
+    if (player === computer) return 'Draw';
     if (
       (player === 'rock' && computer === 'scissors') ||
       (player === 'scissors' && computer === 'paper') ||
       (player === 'paper' && computer === 'rock')
     ) {
+      this.scoreService.incrementScore();
       return 'You Win';
     } else {
       return 'You Lose';

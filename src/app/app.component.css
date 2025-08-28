@@ -8,7 +8,7 @@
   box-sizing: content-box;
 }
 
-app-scorebroad {
+app-scoreboard {
   display: flex;
   justify-content: center;
 }
