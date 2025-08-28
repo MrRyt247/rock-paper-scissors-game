@@ -1,6 +1,6 @@
 <div class="container">
   <div class="choices" *ngIf="!human.hasPlayed" [style.display]="!human.hasPlayed ? 'flex' : 'none'">
-    <img src="../../assets/bg-triangle.svg" alt="triangle">
+    <img src="./assets/bg-triangle.svg" alt="triangle">
     <div class="buttons">
       <button class="button" *ngFor="let choice of choices; let i=index" (click)="play(i)"
         [style.background-image]="'linear-gradient(var(--' + choice.name + 'GradientStart), var(--' + choice.name + 'GradientEnd))'">
