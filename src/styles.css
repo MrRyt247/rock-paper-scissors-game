@@ -25,6 +25,7 @@
 
 body {
   height: 100dvh;
+  width: 100%;
   background: radial-gradient(
     circle at top,
     var(--bgGradientStart),
@@ -32,7 +33,7 @@ body {
   );
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: hidden auto;
 }
 
 input,
@@ -46,7 +47,8 @@ img {
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 0.69rem;
+  letter-spacing: 0.075rem;
   font-weight: 400;
   color: #ccc;
   margin-inline: auto;
