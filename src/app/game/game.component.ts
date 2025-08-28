@@ -12,8 +12,8 @@ export class GameComponent {
   result: string | null = null;
   choices: { name: string; image: string }[] = [
     { name: 'rock', image: './assets/icon-rock.svg' },
-    { name: 'paper', image: '/assets/icon-paper.svg' },
-    { name: 'scissors', image: '/assets/icon-scissors.svg' },
+    { name: 'paper', image: './assets/icon-paper.svg' },
+    { name: 'scissors', image: './assets/icon-scissors.svg' },
   ];
 
   scoreService = inject(ScoreService);
