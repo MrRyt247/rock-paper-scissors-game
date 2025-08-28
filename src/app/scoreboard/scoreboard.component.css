@@ -2,9 +2,8 @@
   max-width: 700px;
   width: 100%;
   border: solid 0.2rem var(--headerOutline);
-  /* background-color: lightblue; */
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   margin-inline: 1.5rem;
   display: flex;
   align-items: center;
@@ -14,10 +13,12 @@
 .score {
   background-color: white;
   border-radius: 5px;
-  padding: 0.75rem 2rem;
+  padding: 1rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  user-select: none;
 
   span:first-of-type {
     font-weight: 600;
@@ -41,7 +42,7 @@
   }
 
   .score {
-    padding: 0.65rem 1.7rem;
+    padding: 0.75rem 2.25rem;
 
     span:last-of-type {
       font-size: 7.5ch;
@@ -50,6 +51,10 @@
 }
 
 @media screen and (max-width: 376px) {
+  .container {
+    padding: 1.5rem;
+  }
+
   .img {
     img {
       height: 70px;
@@ -57,7 +62,7 @@
   }
 
   .score {
-    padding: 0.5rem 1.25rem;
+    padding: 0.5rem 1.5rem;
 
     span:first-of-type {
       letter-spacing: 0.1rem;
