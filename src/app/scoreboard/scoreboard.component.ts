@@ -9,5 +9,4 @@ import { ScoreService } from '../services/score.service';
 })
 export class ScoreboardComponent {
   scoreService = inject(ScoreService);
-  // score = this.scoreService.getScore();
 }

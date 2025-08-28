@@ -1,9 +1,7 @@
 <button class="btn" (click)="toggle()">Rules</button>
 
 <div class="modal-backdrop" *ngIf="isVisible" [class.show]="isOpen" (click)="onBackdropClick()">
-
   <div class="modal" [class.show]="isOpen" (click)="onModalClick($event)">
-
     <h2 class="header">Rules</h2>
 
     <div class="body">
@@ -13,6 +11,5 @@
     <button class="close" type="button" (click)="closeModal()">
       <img src="./assets/icon-close.svg" alt="close icon">
     </button>
-
   </div>
 </div>
